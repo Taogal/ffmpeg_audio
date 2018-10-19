@@ -20,7 +20,7 @@ an app for using build_system_kit
 ![](make_help.png)
 
 
-##More info for ffmpeg:
+## More info for ffmpeg:
 - [雷霄骅的博客](https://blog.csdn.net/leixiaohua1020)
 - [FFmpeg官网](http://ffmpeg.org/documentation.html)
    
