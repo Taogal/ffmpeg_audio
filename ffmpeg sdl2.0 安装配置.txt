@@ -1,0 +1,40 @@
+./configure --prefix=$PWD/tmp --enable-libmp3lame --enable-libvorbis --enable-gpl --enable-version3 --enable-nonfree --enable-pthreads --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libx264 --enable-libxvid --enable-postproc --enable-ffplay --enable-shared
+
+wget https://ffmpeg.org/releases/ffmpeg-4.0.2.tar.bz2
+
+tar -vxf ffmpeg-4.0.2.tar.bz2
+
+cd ffmpeg-4.0.2
+
+
+apt-get install yasm
+apt-get install libxvidcore-dev
+apt-get install libvorbis-dev
+apt-get install libopencore-amrwb-dev
+apt-get install libopencore-amrnb-dev
+apt-get install libmp3lame-dev
+
+./configure --prefix=$PWD/tmp --enable-libmp3lame --enable-libvorbis --enable-gpl \
+--enable-version3 --enable-nonfree --enable-pthreads --enable-libopencore-amrnb \ 
+--enable-libopencore-amrwb --enable-libx264 --enable-libxvid --enable-postproc \
+--enable-ffplay --enable-shared
+
+
+
+wget http://www.libsdl.org/tmp/SDL-2.0.9-12272.tar.gz
+tar -vxf SDL-2.0.9-12272.tar.gz
+cd SDL-2.0.9-12272
+
+apt-get install libgl1-mesa-dev
+
+#安装alsa，解决sdl2.0无法打开audio
+apt-get install libasound2-dev
+apt-get install linux-sound-base alsa-base alsa-utils
+
+
+./configure --prefix=$PWD/tmp
+
+SDL_AUDIODRIVER=alsa ./ffmpeg_audio xiaoqingge.mp3
+
+#解决播放卡顿问题
+apt-get remove pulseaudio

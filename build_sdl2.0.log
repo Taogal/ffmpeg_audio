@@ -1,0 +1,52 @@
+/bin/bash build-scripts/updaterev.sh
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/bin
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/bin
+/usr/bin/install -c -m 755 sdl2-config /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/bin/sdl2-config
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2
+for file in SDL.h SDL_assert.h SDL_atomic.h SDL_audio.h SDL_bits.h SDL_blendmode.h SDL_clipboard.h SDL_cpuinfo.h SDL_egl.h SDL_endian.h SDL_error.h SDL_events.h SDL_filesystem.h SDL_gamecontroller.h SDL_gesture.h SDL_haptic.h SDL_hints.h SDL_joystick.h SDL_keyboard.h SDL_keycode.h SDL_loadso.h SDL_log.h SDL_main.h SDL_messagebox.h SDL_mouse.h SDL_mutex.h SDL_name.h SDL_opengl.h SDL_opengl_glext.h SDL_opengles.h SDL_opengles2_gl2ext.h SDL_opengles2_gl2.h SDL_opengles2_gl2platform.h SDL_opengles2.h SDL_opengles2_khrplatform.h SDL_pixels.h SDL_platform.h SDL_power.h SDL_quit.h SDL_rect.h SDL_render.h SDL_rwops.h SDL_scancode.h SDL_sensor.h SDL_shape.h SDL_stdinc.h SDL_surface.h SDL_system.h SDL_syswm.h SDL_thread.h SDL_timer.h SDL_touch.h SDL_types.h SDL_version.h SDL_video.h SDL_vulkan.h begin_code.h close_code.h SDL_test_assert.h SDL_test_common.h SDL_test_compare.h SDL_test_crc32.h SDL_test_font.h SDL_test_fuzzer.h SDL_test.h SDL_test_harness.h SDL_test_images.h SDL_test_log.h SDL_test_md5.h SDL_test_memory.h SDL_test_random.h; do \
+	    /usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/include/$file /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/$file; \
+	done
+/usr/bin/install -c -m 644 include/SDL_config.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_config.h
+if test -f include/SDL_revision.h; then \
+	    /usr/bin/install -c -m 644 include/SDL_revision.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_revision.h; \
+	else \
+	    /usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/include/SDL_revision.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_revision.h; \
+	fi
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2.la
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2main.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2main.la
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2_test.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2_test.la
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/share/aclocal
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/share/aclocal
+/usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/sdl2.m4 /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/share/aclocal/sdl2.m4
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/pkgconfig
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/pkgconfig
+/usr/bin/install -c -m 644 sdl2.pc /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/pkgconfig
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/cmake/SDL2
+mkdir -p -- /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/cmake/SDL2
+/usr/bin/install -c -m 644 sdl2-config.cmake /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/cmake/SDL2
+/bin/bash build-scripts/updaterev.sh
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/bin
+/usr/bin/install -c -m 755 sdl2-config /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/bin/sdl2-config
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2
+for file in SDL.h SDL_assert.h SDL_atomic.h SDL_audio.h SDL_bits.h SDL_blendmode.h SDL_clipboard.h SDL_cpuinfo.h SDL_egl.h SDL_endian.h SDL_error.h SDL_events.h SDL_filesystem.h SDL_gamecontroller.h SDL_gesture.h SDL_haptic.h SDL_hints.h SDL_joystick.h SDL_keyboard.h SDL_keycode.h SDL_loadso.h SDL_log.h SDL_main.h SDL_messagebox.h SDL_mouse.h SDL_mutex.h SDL_name.h SDL_opengl.h SDL_opengl_glext.h SDL_opengles.h SDL_opengles2_gl2ext.h SDL_opengles2_gl2.h SDL_opengles2_gl2platform.h SDL_opengles2.h SDL_opengles2_khrplatform.h SDL_pixels.h SDL_platform.h SDL_power.h SDL_quit.h SDL_rect.h SDL_render.h SDL_rwops.h SDL_scancode.h SDL_sensor.h SDL_shape.h SDL_stdinc.h SDL_surface.h SDL_system.h SDL_syswm.h SDL_thread.h SDL_timer.h SDL_touch.h SDL_types.h SDL_version.h SDL_video.h SDL_vulkan.h begin_code.h close_code.h SDL_test_assert.h SDL_test_common.h SDL_test_compare.h SDL_test_crc32.h SDL_test_font.h SDL_test_fuzzer.h SDL_test.h SDL_test_harness.h SDL_test_images.h SDL_test_log.h SDL_test_md5.h SDL_test_memory.h SDL_test_random.h; do \
+	    /usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/include/$file /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/$file; \
+	done
+/usr/bin/install -c -m 644 include/SDL_config.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_config.h
+if test -f include/SDL_revision.h; then \
+	    /usr/bin/install -c -m 644 include/SDL_revision.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_revision.h; \
+	else \
+	    /usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/include/SDL_revision.h /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/include/SDL2/SDL_revision.h; \
+	fi
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2.la
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2main.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2main.la
+/bin/bash ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2_test.la /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/libSDL2_test.la
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/share/aclocal
+/usr/bin/install -c -m 644 /work/ffmpeg_audio/components/SDL-2.0.9-12272/sdl2.m4 /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/share/aclocal/sdl2.m4
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/pkgconfig
+/usr/bin/install -c -m 644 sdl2.pc /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/pkgconfig
+/bin/bash build-scripts/mkinstalldirs /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/cmake/SDL2
+/usr/bin/install -c -m 644 sdl2-config.cmake /work/ffmpeg_audio/components/SDL-2.0.9-12272/tmp/lib/cmake/SDL2
