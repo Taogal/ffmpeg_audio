@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 #
@@ -53,12 +52,12 @@ function build_sdl2.0()
 	
 	./configure --prefix=$PWD/tmp
     
-    make -j8 > $TOP_ROOT/build_ffmpeg.log 2>&1
+    make -j8 > $TOP_ROOT/build_sdl2.0.log 2>&1
     make install >> $TOP_ROOT/build_sdl2.0.log 2>&1
 }
 
 
-if [ ! -f "$TOP_ROOT/lib/libav*.so" ];then
+if [ ! -f "$TOP_ROOT/components/lib/libav*.so" ];then
 	build_ffmpeg
 	cd $TOP_ROOT/components/ffmpeg-4.0.2/tmp/lib
 	mkdir -p $TOP_ROOT/components/lib
@@ -71,7 +70,7 @@ else
 	exit 0
 fi
 
-if [ ! -f "$TOP_ROOT/lib/libSDL2.so" ];then
+if [ ! -f "$TOP_ROOT/components/lib/libSDL2.so" ];then
 	build_sdl2.0
 	cd $TOP_ROOT/components/SDL-2.0.9-12272/tmp/lib
 	mkdir -p $TOP_ROOT/components/lib
