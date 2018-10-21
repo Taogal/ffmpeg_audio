@@ -32,8 +32,8 @@ function build_ffmpeg()
 	
 	./configure --prefix=$PWD/tmp --enable-libmp3lame --enable-libvorbis --enable-gpl --enable-version3 --enable-nonfree --enable-pthreads --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libx264 --enable-libxvid --enable-postproc --enable-ffplay --enable-shared
     
-    make -j8 > $TOP_ROOT/build_ffmpeg.log 2>&1
-    make install >> $TOP_ROOT/build_ffmpeg.log 2>&1
+	make -j8 > $TOP_ROOT/build_ffmpeg.log 2>&1
+	make install >> $TOP_ROOT/build_ffmpeg.log 2>&1
 }
 
 function build_sdl2.0()
