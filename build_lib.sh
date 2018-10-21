@@ -51,9 +51,9 @@ function build_sdl2.0()
 	apt-get install libasound2-dev linux-sound-base alsa-base alsa-utils
 	
 	./configure --prefix=$PWD/tmp
-    
-    make -j8 > $TOP_ROOT/build_sdl2.0.log 2>&1
-    make install >> $TOP_ROOT/build_sdl2.0.log 2>&1
+
+	make -j8 > $TOP_ROOT/build_sdl2.0.log 2>&1
+	make install >> $TOP_ROOT/build_sdl2.0.log 2>&1
 }
 
 
