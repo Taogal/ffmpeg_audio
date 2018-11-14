@@ -28,7 +28,7 @@ function build_ffmpeg()
 	fi
 	
 	cd ffmpeg-4.0.2
-	apt-get install yasm libxvidcore-dev libvorbis-dev libopencore-amrwb-dev libopencore-amrnb-dev libmp3lame-dev
+	apt-get install yasm libxvidcore-dev libvorbis-dev libopencore-amrwb-dev libopencore-amrnb-dev libmp3lame-dev libx264-dev
 	
 	./configure --prefix=$PWD/tmp --enable-libmp3lame --enable-libvorbis --enable-gpl --enable-version3 --enable-nonfree --enable-pthreads --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libx264 --enable-libxvid --enable-postproc --enable-ffplay --enable-shared
     
